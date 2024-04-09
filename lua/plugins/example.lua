@@ -118,6 +118,19 @@ return {
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
+    keys = {
+      {
+        "<Space>e",
+        function()
+          require("neo-tree.command").execute({
+            toggle = true,
+            source = "filesystem",
+            position = "right",
+          })
+        end,
+        desc = "Filesystem (root dir)",
+      },
+    },
     opts = {
       ensure_installed = {
         "bash",
